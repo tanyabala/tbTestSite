@@ -1,9 +1,12 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background: linear-gradient(180deg, rgb(11 16 32 / 90%), rgb(11 16 32 / 76%));
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(14px);
   width: 100%;
-  z-index: 2;
+  z-index: 20;
   position: fixed;
+  box-shadow: 0 12px 28px rgb(2 6 23 / 18%);
 }
 
 header nav {
@@ -51,7 +54,12 @@ header nav p {
 }
 
 header nav a:any-link {
-  color: currentcolor;
+  color: var(--text-color);
+}
+
+header nav a:any-link:hover {
+  color: var(--link-color);
+  text-decoration: none;
 }
 
 /* hamburger */
@@ -66,9 +74,9 @@ header nav .nav-hamburger button {
   height: 22px;
   margin: 0;
   border: 0;
-  border-radius: 0;
+  border-radius: 8px;
   padding: 0;
-  background-color: var(--background-color);
+  background: rgb(148 163 184 / 8%);
   color: inherit;
   overflow: initial;
   text-overflow: initial;
@@ -170,7 +178,7 @@ header nav .nav-sections ul {
 }
 
 header nav .nav-sections ul > li {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 header nav .nav-sections ul > li > ul {
@@ -179,6 +187,14 @@ header nav .nav-sections ul > li > ul {
 
 header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
+}
+
+header nav .nav-sections .default-content-wrapper > ul > li > ul {
+  background: linear-gradient(180deg, rgb(15 23 42 / 96%), rgb(17 24 39 / 90%));
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: var(--shadow-soft);
 }
 
 @media (width >= 900px) {

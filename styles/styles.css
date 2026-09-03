@@ -12,12 +12,16 @@
 
 :root {
   /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --background-color: #0b1020;
+  --background-color-alt: #111827;
+  --light-color: #171f2b;
+  --dark-color: #dfe7ff;
+  --text-color: #edf2ff;
+  --link-color: #7dd3fc;
+  --link-hover-color: #a78bfa;
+  --card-color: rgb(17 24 39 / 88%);
+  --border-color: rgb(148 163 184 / 18%);
+  --shadow-soft: 0 25px 50px rgb(15 23 42 / 38%);
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -73,7 +77,10 @@
 body {
   display: none;
   margin: 0;
-  background-color: var(--background-color);
+  background:
+    radial-gradient(circle at top left, rgb(124 58 237 / 22%), transparent 28%),
+    radial-gradient(circle at top right, rgb(14 165 233 / 18%), transparent 24%),
+    var(--background-color);
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
@@ -107,8 +114,9 @@ h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
   scroll-margin: 40px;
 }
 
@@ -158,6 +166,7 @@ a:any-link {
   color: var(--link-color);
   text-decoration: none;
   overflow-wrap: break-word;
+  transition: color 0.2s ease;
 }
 
 a:hover {
@@ -173,27 +182,31 @@ button {
   max-width: 100%;
   margin: 12px 0;
   border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border-radius: 999px;
+  padding: 0.72em 1.5em;
   font-family: var(--body-font-family);
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background: linear-gradient(135deg, #7dd3fc, #a78bfa);
+  color: #08111f;
+  box-shadow: 0 10px 24px rgb(124 58 237 / 24%);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background: linear-gradient(135deg, #a5f3fc, #c4b5fd);
+  box-shadow: 0 16px 28px rgb(96 165 250 / 28%);
+  transform: translateY(-1px);
   cursor: pointer;
 }
 
@@ -205,9 +218,10 @@ button:disabled:hover {
 
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
+  background: transparent;
+  border: 2px solid rgb(125 211 252 / 70%);
   color: var(--text-color);
+  box-shadow: none;
 }
 
 main img {
@@ -242,6 +256,20 @@ main > .section:first-of-type {
   margin-top: 0;
 }
 
+main .section > div {
+  border-radius: 20px;
+  position: relative;
+}
+
+main .section > div::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgb(124 58 237 / 8%), transparent 32%, rgb(14 165 233 / 8%));
+  pointer-events: none;
+}
+
 @media (width >= 900px) {
   main > .section > div {
     padding: 0 32px;
@@ -251,7 +279,22 @@ main > .section:first-of-type {
 /* section metadata */
 main .section.light,
 main .section.highlight {
-  background-color: var(--light-color);
+  background: linear-gradient(180deg, rgb(23 31 43 / 85%), rgb(11 16 32 / 92%));
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
   margin: 0;
   padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+main .section.light::before,
+main .section.highlight::before {
+  content: '';
+  position: absolute;
+  inset: auto -10% -40% auto;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgb(125 211 252 / 18%), transparent 60%);
+  pointer-events: none;
 }
