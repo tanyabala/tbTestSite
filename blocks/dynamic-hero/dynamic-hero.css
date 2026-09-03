@@ -1,56 +1,76 @@
 .dynamic-hero-container .dynamic-hero-wrapper {
-  max-width: unset;
-  padding: 0;
+  max-width: 100%;
+  padding: 0 24px;
 }
 
 .dynamic-hero .dynamic-hero-banner {
-  position: relative;
-  min-height: 300px;
+  min-width: min(360px, 85vw);
+  border: 1px solid #d5d8df;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
 }
 
 .dynamic-hero .dynamic-hero-list {
-  display: grid;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   gap: 24px;
+  padding: 8px 4px 12px;
 }
 
 .dynamic-hero .dynamic-hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: min(1200px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 40px 24px;
-  color: var(--background-color);
+  padding: 20px;
+  color: #1f2937;
+}
+
+.dynamic-hero .dynamic-hero-banner > picture {
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: #eef1f5;
 }
 
 .dynamic-hero .dynamic-hero-content h1 {
+  font-size: 1.5rem;
+  line-height: 1.3;
   margin: 0;
+  color: #111827;
 }
 
 .dynamic-hero .dynamic-hero-content h2 {
+  font-size: 1.25rem;
+  line-height: 1.35;
   margin: 0;
+  color: #111827;
 }
 
 .dynamic-hero .dynamic-hero-description {
-  max-width: 55ch;
-  margin-top: 16px;
+  margin-top: 12px;
   margin-bottom: 0;
-}
-
-.dynamic-hero .dynamic-hero-banner picture {
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-  box-sizing: border-box;
+  color: #374151;
+  line-height: 1.5;
 }
 
 .dynamic-hero .dynamic-hero-banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.dynamic-hero .dynamic-hero-banner .button-container {
+  margin-top: 16px;
+  margin-bottom: 0;
 }
 
 @media (width >= 900px) {
-  .dynamic-hero .dynamic-hero-content {
-    padding: 40px 32px;
+  .dynamic-hero-container .dynamic-hero-wrapper {
+    padding: 0 32px;
+  }
+
+  .dynamic-hero .dynamic-hero-banner {
+    min-width: 420px;
   }
 }

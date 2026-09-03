@@ -10,6 +10,38 @@ function toAbsolutePath(path) {
   return new URL(path, window.location.origin).pathname;
 }
 
+function normalizeImageUrl(src) {
+  if (!src) return '';
+  try {
+    const parsed = new URL(src, window.location.origin);
+    const driveFileMatch = parsed.pathname.match(/\/file\/d\/([^/]+)/);
+    if (parsed.hostname.includes('drive.google.com') && driveFileMatch) {
+      return `https://drive.google.com/uc?export=view&id=${driveFileMatch[1]}`;
+    }
+    return parsed.href;
+  } catch (e) {
+    return src;
+  }
+}
+
+function buildImage(image, alt, eager) {
+  const normalizedImage = normalizeImageUrl(image);
+  if (!normalizedImage) return null;
+
+  const imageUrl = new URL(normalizedImage, window.location.origin);
+  if (imageUrl.origin === window.location.origin) {
+    return createOptimizedPicture(normalizedImage, alt, eager, [{ media: '(min-width: 900px)', width: '1200' }, { width: '800' }]);
+  }
+
+  const picture = document.createElement('picture');
+  const img = document.createElement('img');
+  img.loading = eager ? 'eager' : 'lazy';
+  img.alt = alt;
+  img.src = imageUrl.href;
+  picture.append(img);
+  return picture;
+}
+
 export default async function decorate(block) {
   const config = readBlockConfig(block);
   const endpoint = toAbsolutePath(config.endpoint || '/query-index.json');
@@ -47,8 +79,9 @@ export default async function decorate(block) {
     const banner = document.createElement('div');
     banner.className = 'dynamic-hero-banner';
 
-    if (image) {
-      banner.append(createOptimizedPicture(image, alt, index === 0, [{ media: '(min-width: 900px)', width: '2000' }, { width: '900' }]));
+    const picture = buildImage(image, alt, index === 0);
+    if (picture) {
+      banner.append(picture);
     }
 
     const content = document.createElement('div');
