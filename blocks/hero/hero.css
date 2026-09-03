@@ -37,9 +37,4 @@
   .hero {
     padding: 40px 32px;
   }
-
-  .hero h1 {
-    right: 32px;
-    max-width: min(1200px, calc(100% - 64px));
-  }
 }
