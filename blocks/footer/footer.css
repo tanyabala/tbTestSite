@@ -1,9 +1,9 @@
 footer {
-  background: linear-gradient(180deg, rgb(11 16 32 / 97%), rgb(15 23 42 / 100%));
+  background: linear-gradient(180deg, rgb(10 10 10 / 97%), rgb(0 0 0 / 100%));
   border-top: 1px solid var(--border-color);
   font-size: var(--body-font-size-xs);
-  color: #dbeafe;
-  box-shadow: inset 0 1px 0 rgb(148 163 184 / 10%);
+  color: #f7f7f7;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 6%);
 }
 
 footer .footer > div {
@@ -14,7 +14,7 @@ footer .footer > div {
 
 footer .footer p {
   margin: 0;
-  color: #dbeafe;
+  color: #f7f7f7;
 }
 
 footer a:any-link {

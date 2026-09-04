@@ -1,0 +1,58 @@
+.tabs {
+  --brand-red: #e31837;
+  --text-primary: #000;
+  --text-muted: #666;
+  --border-neutral: #e0e0e0;
+
+  width: 100%;
+  font-family: Aptos, Montserrat, "Helvetica Neue", sans-serif;
+  margin-top: 8px;
+}
+
+.tabs .tabs-list {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-bottom: 1px solid var(--border-neutral);
+  margin-bottom: 2.25rem;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.tabs .tabs-trigger {
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tabs .tabs-trigger.is-active,
+.tabs .tabs-trigger:hover,
+.tabs .tabs-trigger:focus {
+  color: var(--text-primary);
+  border-bottom-color: var(--brand-red);
+  padding-bottom: 8px;
+}
+
+.tabs .tabs-panel {
+  display: block;
+}
+
+.tabs .tabs-panel[style*='display: none;'] {
+  display: none;
+}
+
+@media (width < 900px) {
+  .tabs .tabs-trigger {
+    font-size: 1.05rem;
+    padding: 12px 16px;
+  }
+}

@@ -1,6 +1,6 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background: linear-gradient(180deg, rgb(11 16 32 / 90%), rgb(11 16 32 / 76%));
+  background: linear-gradient(180deg, rgb(10 10 10 / 92%), rgb(10 10 10 / 78%));
   border-bottom: 1px solid var(--border-color);
   backdrop-filter: blur(14px);
   width: 100%;
@@ -76,7 +76,7 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 8px;
   padding: 0;
-  background: rgb(148 163 184 / 8%);
+  background: rgb(255 255 255 / 6%);
   color: inherit;
   overflow: initial;
   text-overflow: initial;
@@ -190,7 +190,7 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 header nav .nav-sections .default-content-wrapper > ul > li > ul {
-  background: linear-gradient(180deg, rgb(15 23 42 / 96%), rgb(17 24 39 / 90%));
+  background: linear-gradient(180deg, rgb(17 17 17 / 96%), rgb(10 10 10 / 90%));
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 12px 16px;

@@ -10,7 +10,7 @@
 .cards > ul > li {
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  background: linear-gradient(180deg, rgb(17 24 39 / 88%), rgb(11 16 32 / 96%));
+  background: linear-gradient(180deg, rgb(17 17 17 / 88%), rgb(10 10 10 / 96%));
   box-shadow: var(--shadow-soft);
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -18,7 +18,7 @@
 
 .cards > ul > li:hover {
   transform: translateY(-2px);
-  box-shadow: 0 22px 35px rgb(15 23 42 / 26%);
+  box-shadow: 0 22px 35px rgb(0 0 0 / 26%);
 }
 
 .cards .cards-card-body {

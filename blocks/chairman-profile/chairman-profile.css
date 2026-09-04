@@ -1,0 +1,209 @@
+.chairman-profile {
+  --brand-red: #e31837;
+  --brand-black: #000;
+  --text-primary: #000;
+  --text-body: #333;
+  --text-muted: #666;
+  --bg-soft: #f4f4f4;
+  --bg-offwhite: #f8f8f8;
+  --neutral-line: #e0e0e0;
+
+  display: grid;
+  grid-template-columns: 58% 42%;
+  align-items: center;
+  background: #fff;
+  border: 0;
+  box-shadow: none;
+  font-family: Aptos, Montserrat, "Helvetica Neue", sans-serif;
+}
+
+.chairman-profile .chairman-profile-copy {
+  padding: 64px 64px 64px 0;
+  color: var(--text-primary);
+}
+
+.chairman-profile .chairman-profile-copy .subtitle {
+  color: var(--brand-red);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+.chairman-profile .chairman-profile-copy h2,
+.chairman-profile .chairman-profile-copy h3 {
+  font-size: clamp(2.35rem, 3.2vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 0.7rem;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.chairman-profile .chairman-profile-copy .designation {
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 1.7rem;
+}
+
+.chairman-profile-modal-content p {
+  margin: 0 0 1rem;
+}
+
+.chairman-profile .chairman-profile-copy p,
+.chairman-profile .chairman-profile-copy li {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+.chairman-profile .chairman-profile-copy .teaser,
+.chairman-profile .chairman-profile-copy .summary {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 0.9rem;
+}
+
+.chairman-profile .chairman-profile-read-more {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--brand-red);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-top: 12px;
+  letter-spacing: 0.02em;
+}
+
+.chairman-profile .chairman-profile-image {
+  background: var(--bg-soft);
+  min-height: 580px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+}
+
+.chairman-profile-modal-photo,
+.chairman-profile-modal-content {
+  width: 100%;
+}
+
+.chairman-profile-modal-photo picture,
+.chairman-profile-modal-photo img,
+.chairman-profile .chairman-profile-image picture,
+.chairman-profile .chairman-profile-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.chairman-profile-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0 0 0 / 60%);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.chairman-profile-modal-backdrop.is-open {
+  display: flex;
+}
+
+.chairman-profile-modal-dialog {
+  position: relative;
+  display: flex;
+  width: min(1120px, 92vw);
+  height: min(88vh, 860px);
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgb(0 0 0 / 22%);
+}
+
+.chairman-profile-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  color: #000;
+  z-index: 10;
+}
+
+.chairman-profile-modal-photo {
+  position: sticky;
+  top: 0;
+  width: 40%;
+  background: linear-gradient(180deg, #f8f8f8 0%, #f4f4f4 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.chairman-profile-modal-content {
+  width: 60%;
+  padding: 40px;
+  overflow-y: auto;
+  color: #333;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.chairman-profile-modal-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chairman-profile-modal-content::-webkit-scrollbar-thumb {
+  background: #e31837;
+  border-radius: 4px;
+}
+
+@media (width < 900px) {
+  .chairman-profile {
+    grid-template-columns: 1fr;
+  }
+
+  .chairman-profile .chairman-profile-copy {
+    padding: 32px 0 20px;
+  }
+
+  .chairman-profile .chairman-profile-copy h2,
+  .chairman-profile .chairman-profile-copy h3 {
+    font-size: 2.2rem;
+  }
+
+  .chairman-profile-modal-dialog {
+    flex-direction: column;
+    height: auto;
+    max-height: 85vh;
+  }
+
+  .chairman-profile-modal-photo,
+  .chairman-profile-modal-content {
+    width: 100%;
+  }
+
+  .chairman-profile-modal-photo {
+    min-height: 220px;
+    position: relative;
+  }
+}

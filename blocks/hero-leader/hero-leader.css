@@ -1,0 +1,126 @@
+.hero-leader {
+  --brand-red: #e31837;
+  --hero-dark: #0a0a0a;
+  --hero-black: #000;
+  --text-primary: #fff;
+  --text-muted: #a0a0a0;
+  --border-neutral: #e0e0e0;
+
+  background: linear-gradient(180deg, var(--hero-dark) 0%, var(--hero-black) 100%);
+  color: var(--text-primary);
+  width: 100%;
+  font-family: Aptos, Montserrat, "Helvetica Neue", sans-serif;
+  margin-inline: calc(50% - 50vw);
+}
+
+.hero-leader .hero-leader-inner {
+  display: flex;
+  align-items: stretch;
+  min-height: clamp(520px, 64vw, 760px);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.hero-leader .hero-leader-media {
+  flex: 0 0 47%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: linear-gradient(180deg, #171717 0%, #101010 100%);
+  overflow: hidden;
+}
+
+.hero-leader .hero-leader-media picture,
+.hero-leader .hero-leader-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.hero-leader .hero-leader-copy {
+  flex: 0 0 53%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px min(7vw, 96px) 64px min(5vw, 72px);
+  background: linear-gradient(180deg, rgb(10 10 10 / 94%), rgb(0 0 0 / 100%));
+}
+
+.hero-leader .hero-leader-quote-mark {
+  display: block;
+  color: var(--brand-red);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.hero-leader .hero-leader-quote-text {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2rem, 2.4vw, 2.75rem);
+  line-height: 1.25;
+  font-weight: 700;
+  color: #fff;
+  max-width: 680px;
+  letter-spacing: -0.02em;
+}
+
+.hero-leader .hero-leader-author {
+  margin: 0 0 2rem;
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.hero-leader .hero-leader-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 170px;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  padding: 12px 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  border-radius: 0;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-leader .hero-leader-cta:hover,
+.hero-leader .hero-leader-cta:focus {
+  background: #fff;
+  color: #000;
+  transform: translateY(-1px);
+}
+
+@media (width < 900px) {
+  .hero-leader {
+    margin-inline: 0;
+  }
+
+  .hero-leader .hero-leader-inner {
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .hero-leader .hero-leader-media {
+    min-height: 360px;
+    flex-basis: auto;
+  }
+
+  .hero-leader .hero-leader-copy {
+    padding: 36px 24px 42px;
+  }
+
+  .hero-leader .hero-leader-quote-text {
+    font-size: 1.95rem;
+  }
+}

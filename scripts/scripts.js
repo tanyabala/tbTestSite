@@ -53,6 +53,13 @@ function buildAutoBlocks(main) {
   }
 }
 
+function decoratePageContext() {
+  const path = window.location.pathname.replace(/\/+$/, '');
+  if (path.endsWith('/board-and-leadership') || path.endsWith('/board-and-leadership.html') || path.endsWith('/leadership.html')) {
+    document.body.classList.add('page-board-and-leadership');
+  }
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -74,6 +81,7 @@ export function decorateMain(main) {
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+  decoratePageContext();
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);

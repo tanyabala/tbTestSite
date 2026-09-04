@@ -8,14 +8,14 @@
   border: 1px solid var(--border-color);
   border-radius: 22px;
   overflow: hidden;
-  background: linear-gradient(180deg, rgb(17 24 39 / 90%), rgb(11 16 32 / 96%));
+  background: linear-gradient(180deg, rgb(17 17 17 / 90%), rgb(10 10 10 / 96%));
   box-shadow: var(--shadow-soft);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .dynamic-hero .dynamic-hero-banner:hover {
   transform: translateY(-2px);
-  box-shadow: 0 26px 40px rgb(15 23 42 / 26%);
+  box-shadow: 0 26px 40px rgb(0 0 0 / 26%);
 }
 
 .dynamic-hero .dynamic-hero-list {
@@ -35,27 +35,27 @@
 .dynamic-hero .dynamic-hero-banner > picture {
   display: block;
   aspect-ratio: 16 / 9;
-  background: rgb(148 163 184 / 10%);
+  background: rgb(255 255 255 / 6%);
 }
 
 .dynamic-hero .dynamic-hero-content h1 {
   font-size: 1.5rem;
   line-height: 1.3;
   margin: 0;
-  color: #f8fbff;
+  color: #fff;
 }
 
 .dynamic-hero .dynamic-hero-content h2 {
   font-size: 1.25rem;
   line-height: 1.35;
   margin: 0;
-  color: #f8fbff;
+  color: #fff;
 }
 
 .dynamic-hero .dynamic-hero-description {
   margin-top: 12px;
   margin-bottom: 0;
-  color: #dbeafe;
+  color: #e6e6e6;
   line-height: 1.5;
 }
 
@@ -64,7 +64,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: saturate(1.1) contrast(1.08);
+  filter: saturate(0.95) contrast(1.08);
 }
 
 .dynamic-hero .dynamic-hero-banner .button-container {
